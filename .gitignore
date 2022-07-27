@@ -127,3 +127,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# big files from zippedData
+zippedData/im.db.zip
+zippedData/im.db
