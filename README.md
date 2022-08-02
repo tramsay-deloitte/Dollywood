@@ -1,22 +1,22 @@
 # Dollywood
-Thomas - tramsay-deloitte
-Enoch - ekwaning
-Krystal - krystalduong
-Augusth - aukoppaldeloitte
+Thomas - tramsay-deloitte  
+Enoch - ekwaning  
+Krystal - krystalduong  
+Augusth - aukoppaldeloitte  
 
 ![welcome](https://media.giphy.com/media/l0MYGb1LuZ3n7dRnO/giphy.gif) 
 
 # ***Repo Guide***
 
 # ***Technologies Used:***
-python 3.8.5
-conda 4.12.0
-numpy 1.18.5
-pandas 1.1.3
-matplotlib 3.3.1
-seaborn 0.11.0
-scipy.stats 1.5.0
-statsmodel.api 0.12.0
+python 3.8.5  
+conda 4.12.0  
+numpy 1.18.5  
+pandas 1.1.3  
+matplotlib 3.3.1  
+seaborn 0.11.0  
+scipy.stats 1.5.0  
+statsmodel.api 0.12.0  
 
 # ***Repo Contents:***
 
