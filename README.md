@@ -20,137 +20,113 @@ statsmodel.api 0.12.0
 
 # ***Repo Contents:***
 
-A .gitignore file that contains certain ignore instructions in terms of certain data sources and repositories.
-A Monthly Data Analysis.ipynb that contains the best months to release content based on revenue.
-A Mostpopular.ipynb that contains the grossing information of the top genres in the film industry. 
-A BudgetRevenue.ipynb that compares the relationship between production budgets and revenue.
+<br> A Individual Notebooks folder with data explorationa and visualization techniques done by the team.
+<br> A Reccomendation Notebooks folder with specific data exploration and visualization techniques for each recommendation.
+<br> .gitignore file that contains certain ignore instructions in terms of certain data sources and repositories.
+<br> A Capstone Final.pdf folder that has the teams final presentation in pdf format.
+<br> A final notebook that has all of the data exploration and visualization that pertains to the final deliverables for this project.
+<br> A final notebook.pdf of the final notebook.
+<br> A README.md file that explains the contents of this repo. 
 
 # ***Description:***
 
-Our client Computing Vision is looking to create a new movie studio. Due to their non-film backgrounds they need assistance on what types of films to create. The team was given several different sources of data sets. This was done in an effort to leverage the datasets for insights and courses of actions for the new movie studio. First, the team found insights on monthly seasonality in terms of film releases. This in turn helped influence the content produced. Second, the team found insights on the most popular genres produced from 2010 to 2018. This allowed the team to focus on the specific demands of genres expected from the audience. Lastly, the team found a diminshing correlation between worldwide gross and the production budget. This allowed the team to propose that the studio look for progressive cost cutting manuevers.
+Our client Computing Vision is looking to create a new movie studio. Due to their non-film backgrounds they need assistance on what types of films to create. The team was given several different sources of data sets. This was done in an effort to leverage the datasets for insights and courses of actions for the new movie studio. First, the team found insights on the most popular genres produced from 2010 to 2018. This allowed the team to focus on the specific demands of genres expected from the audience. Second, the team found insights on monthly seasonality in terms of film releases. This in turn helped influence the content produced.  Lastly, the team found a diminshing correlation between worldwide gross and the production budget. This allowed the team to propose that the studio look for progressive cost cutting manuevers.
 
-### Categorical Variables: 
+###Categorical Variables: 
 <br> month, months, genre, genres, release_date, release_month, movie, title, studio
 
-### Quantitative Variables: 
+###Quantitative Variables: 
 <br> gross, production_budget, domestic_gross, domestic_profit, worldwide_gross, worldwide_profit, popularity, production_budgetINT, domestic_grossINT, worldwide_grossINT
-
 
 ![recommendation](https://media.giphy.com/media/sdjzyK11BKMRK5fw3q/giphy.gif)
 
-# ***Recommendation 1*** Release content during summer (May - July) and winter (November - December) holidays. 
+###Data Importing:
+<br>Step 1 - Imported tables movie_basics & movie_ratings from im.db file.
+<br>Step 2 - Imported the csv file from Box Office Mojo with movie_gross info. 
+<br>Step 3 - Imported the csv file from TMDB with movie_gross info.
+<br>Step 4 - Imported the csv file from The Numbers with movie_budgets info.
+<br>Step 5 - Imported the tsv file from Rotten Tomatoes with movie_gross info. 
 
-### Data Importing
-<br>Step 1 - Imported tn.movie_budgets.csv table.
-### Data Cleaning
-<br>Step 1 - Converted the dallar values for production_budget, domestic_gross, & worldwide_gross into a float from a string.
-<br>Step 2 - Converted release_date column into desired date/time format.
-<br>Step 3 - Created a new variable called release_month and set it equal to the month in release_date.
-<br>Step 4 - Created a new variable called domestic_profit and set it equal to domestic_gross minus production_budget.
-<br>Step 5 - Created a new variable called worldwide_profit and set it equal to worldwide_gross minus production_budget.
-<br>Step 6 - Used grouby method to filter movies released by month in release_month
-### Data Visualization
-<br>Step 1 - Ploted barplot with x axis months & y axis number of movies released.
-<br>Graph 1 - 
-<br>Anlysis 1 - 
-<br>Step 2 - Ploted barplot with x axis months & y axis worldwide_profit (USD).
-<br>Graph 2 - 
-<br>Anlysis 2 - 
-<br>Step 3 - Ploted barplot with x axis months & y axis domestic_profit (USD).
-<br>Graph 3 - 
-<br>Anlysis 3 - 
+###Data Cleaning
+#####Movie Gross Data Cleaning
+<br>Step 1 - Scale domestic and foreing gross by a million.
+<br>Step 2 - Find top 10 movie gross per year from 2010-2018.
+#####Popularity Data Cleaning
+<br>Step 1 - Created a top 10 dataframe using the movies column dataframe.
+#####Genre Data Cleaning
+<br>Step 4 - Found all of the different unique genres.
+<br>Step 5 - Created a dataframe of all of the genres with repeating movies to represent movies as multiple genres.
+<br>Step 6 - Defined function that isolates all the movies that are a genre, then create a new column with the genre name.
+<br>Step 7 - Emptied the dataframe.
+<br>Step 8 - Wrote for loop that creates dataframes of all the movies that are each genre and concatenates them together, with repeating movies.
+<br>Step 9 - Selected specific columns and the join the movie_gross and genres dataframes.
+<br>Step 10 - Dropped null values and isolate only the needed columns.
+<br>Step 11 - Found the genres that have the most domestic gross revenue over the entire time period.
+<br>Step 12 - Grouped by genre and year, used mean to control for number of movies released, could also use sum.
+<br>Step 13 - Created function to plot the genres and their domestic gross revenue.
+<br>Step 14 - Created list of top grossing genres to plot.
+#####Monthly Analysis Data Cleaning
+<br>Step 1 - Converted the dollar values for the budgets into floats.
+<br>Step 2 - Scaled the budget and gross by dividing by a million.
+<br>Step 3 - Made release date into datetime, then create variable called release_month.
+<br>Step 4 - Created domestic and worldwide profits as the gross minus the budget.
+#####Budget vs. Revenue Data Cleaning
+<br>Step 1 - Created a production column int column.
+<br>Step 2 - Created a domestic gross int column.
+<br>Step 3 - Created a woldwide gross int column.
+<br>Step 4 - Removed worldwide budgets of 0.
+<br>Step 5 - Scaled by one million.
+#####Top Studios' Budgets Data Cleaning 
+<br>Step 1 - Inner joined two datasets.
+<br>Step 2 - Made release date datetime.
+<br>Step 3 - Dropped one null studio row.
+<br>Step 4 - Made new variable called studio to edit studio names.
+<br>Step 5 - Renamed studios that are the same with different names in the dataset.
+<br>Step 6 - Merged the studio variable back into dataframe.
+<br>Step 7 - Isolated top 10 studios by their average movie budget and worldwide gross, sort by worldwide gross.
+<br>Step 8 - Isolated top 10 studios by their total budget and revenues.
 
+###Data Visualization
 
-# ***Recommendation 2*** - Movie release's should include science fiction, adventure and animation related genres.
+#####Type of Movie
+#######Top 10 grossing movie in each year
+<br>Step 1 - Plotted top 10 Grossing movies in each year from 2010-2018.
+#######Top 10 Popular
+<br>Step 1 - Plotted top 10 popular movies of all time.
+#######Genres and Domestic Gross
+<br>Step 1 - Plotted the average gross by genre from 2010-2018.
+![image](https://user-images.githubusercontent.com/108957906/182440616-0913a940-4111-48b3-ade6-fb98cfb67823.png)
+<br>Step 2 - Create plot and call function to graph each of the top genres.
+<br>Step 3 - Plotted the Average Domestic Gross Revenue of Top Movie Genres from 2010-2018.
+![image](https://user-images.githubusercontent.com/108957906/182440713-790b93e4-3805-41af-8d21-7ace88a7fad4.png)
+#Recommendation 1: According to this Data a new studio should invest in establishing an action based franchise which would connect all its movies. If possible this franchise should also be superhero based as superhero movies can do a great job at encapsulating all the top genres such as Sci-Fi, Action and Animation.
 
-### Data Importing
-<br>Step 1 - Imported bom.movie_gross.csv table.
-<br>Step 2 - Imported tmdb.movies.csv table.
-<br>Step 3 - Connected to IMDB database and select all columns from movie_basics table.
-### Data Cleaning
-##### Movie Gross Data Cleaning
-<br>Step 1 - Set movie_gross table equal to bom_movie_gross.
-<br>Step 2 - Ignored foreign_gross column because of large amount (1350) of Null/NA values.
-<br>Step 3 - Made individual dataframe for each year and take the top 10 movies.
-##### Popularity Data Cleaning
-<br>Step 1 - Created a top 10 dataframe using the tmbd.movies.popularity csv file.
-<br>Step 2 - Sorted values in tmdb.movies.release_date.csv by descending order.
-##### Genre Data Cleaning
-<br>Step 1 - Found all of the different unique genres in the imdb_movie_basics.genre database.
-<br><!---Created a new dataframe of all genres with repeating movie as multiple genres--->
-<br>Step 2 - Defined a function that isolates all the movies that are a genre.
-<br>Step 3 - Created a new column with the genre name.
-<br>Step 4 - Emptied the genre dataframe.
-<br>Step 5 - Wrote for loop that created dataframe of all movies that are each genre and concatenates them together, with repeating movies.
-<br>Step 6 - Selected specific columns and left joined the movie_gross and genres dataframes.
-<br>Step 7 - Droped null values and isolated only the needed columns.
-<br>Step 8 - Printed the genres that have the most domestic gross revenue over the entire time period.
-<br>Step 9 - Group by genre and year, used mean to control for number of movies released, could also use sum.
-<br>Step 10 - Created function to plot the genres and their domestic gross revenue.
-<br>Step 11 - Created list of top grossing genres to plot.
-### Data Visualization
-<br>Step 1 - Ploted barplot with x axis Movie & y axis gross (in $100 million) for 2010-2018.
-<br>Graph 1 - 
-<br>Anlysis 1 -
-<br>Step 2 - Ploted barplot with x axis of Movie & y axis Popularity for top 10 all time.
-<br>Graph 2 - 
-<br>Anlysis 2 -
-<br>Step 3 - Ploted barplot with x axis of Genre & y axis Domestic Gross (USD) for average gross by genre from 2010 - 2018.
-<br>Graph 3 - 
-<br>Anlysis 3 -
-<br>Step 4 - Created call function for top genres and plot lineplot with x axis of Year & y axis Average Domestic Gross Revenue (USD) for average domestic gross. revenue of top 10 movie genres from 2010-2018.
-<br>Graph 4 - 
-<br>Anlysis 4 -
-<br>Step 5 - Imported from youtube?; checked the top genre combinations, ploted bar plot of top movies with x axis of Genre and y axis of Count.
-<br>Graph 5 - 
-<br>Analysis 5 -
+#####When to Release Movie
+#######Months With Most Movie Releases from 1915-2020
+<br>Step 1 - Plotted the months that have the most movie releases from 1915-2020.
+#######Months with the Most Profit Worldwide
+<br>Step 1 - Plotted the months with the most profit worldwide by month.
+#######Months with the Most Profit Worldwide
+<br>Step 1 - Plotted the months with the most profit domestically by month.
+#Reccomendation 2: The large amounts of profits in the summer (May - July) and winter (November - December) indicates the schedules of audience free time dedicated to recreational activities such as watching a movie with family or friends. The movie studio would be wise to line up large project or blockbuster types of movies with these high activity months as they are more prone to being exposed to the public audience.
 
-# ***Recommendation 3*** - Understand that bloated production budgets do not guarantee maximum revenue.
+#####Budget
+#######Budget and Revenue Statistical Analysis
+<br>Step 1 - Plotted distribution of production_budget INT.
+<br>Step 2 - Plotted distribution of worldwide_grossINT. 
+<br>Step 3 - Tested for normality of production_budget INT. 
+<br>Step 4 - Tested for normality of worldwide_grossINT.
+<br>Step 5 - Plotted scatterplot of budget and revenue to show relationship between the two.
+<br>Step 6 - Performed a Simple Linear Regression, regressing production budget on worldwide gross to learn more about the relationship.
+#######Top Studios and their Budgets
+<br>Step 1 - Plotted the Top Studio's Average Revenue vs Budget per Movie, 1984-2018.
+<br>Step 2 - Plotted the Top Studio's Total Revenue vs Budget Across All Movies, 1984-2018.
+#Reccomendation 3: Taking into account the typical budgets of competitors and the positive relationship between production budget and worldwide gross, that also looks to have the possibility of diminishing returns, we recommend that Computing Vision keeps their movie budgets greater than 43,000,000 USD and less than 200,000,000 USD per movie.
 
-### Data Importing
-<br>Step 1 - Imported tn.movie_budgets.csv file.
-### Data Cleaning
-<br>Step 1 - Created a production column int column
-<br>Step 2 - Created a domestic gross int column
-<br>Step 3 - Created a worldwide gross int column
-<br>Step 4 - Removed all movies with a worldwide gross of 0 or less.
-<br>Step 5 - Imported bom.movie_gross.csv file and inner join with movie_budgets table. call new dataframe movie_studio_budget.
-<br>Step 6 - Made release date datetime
-<br>Step 7 - Dropped null rows in movie_studio_budget
-<br>Step 8 - Checked to see unique studio in movie_studio_budget.studio
-<br>Step 9 - Made new variable called studios to edit studio names
-<br>Step 10 - Renamed studios that are the same with different names in the dataset
-<br>Step 11 - Merged the studio variable back into the studios dataframe
-### Data Visualization
-<br>Step 1 - Ploted scatterplot of x-axis production budget & y-axis Worldwide Gross (USD) to show diminishing return on production budget.
-<br>Graph 1 - 
-<br>Analysis 1 -
-<br>Step 2 - Ploted displot of x-axis Production Budget (USD) & y-axis Density to show production budget distribution trends.
-<br>Graph 2 - 
-<br>Analysis 2 -
-<br>Step 3 - Ploted displot of x-axis Worldwide Gross (USD) & y-axis Density to show worldwide gross distribution trends.
-<br>Graph 3 - 
-<br>Analysis 3 -
-##### Statistical Analysis
-<br>Step 1 - Tested for normality of production_budgetINT
-<br>Step 2 - Tested for normality of worldwide_grossINT
-<br>Step 3 - Performed OLS Regression analysis on worldwide_grossINT ~ production_budgetINT 
-
-
-## Top Studio Budgets
-### Data Imported
-<br>Step 1 - Displayed first 5 records of movie_studio_budget dataframe.
-### Data Cleaning
-<br>Step 1 - Sorted release_date by year
-<br>Step 2 - Grouped 'studio' by mean values for production_budgetINT' & worldwide_grossINT
-<br>Step 3 - Sorted worldwide_grossINT by top 10 records.
-### Data Visualization
-<br>Step 1 - Ploted barplot of x-axis Studio & y-axis Average Worldwide Gross (USD) for top studio's average revenue vs budget per movie from 1984 - 2018.
-<br>Graph 1 - 
-<br>Anlysis 1 -
-<br>Data Clean Step 4 - Grouped 'studio' by sum values for production_budgetINT & worldwide_grossINT
-<br>Step 2 - Ploted barplot of x-axis Studio & y-axis Total Worldwide Gross (USD) for top studio's total revenue vs budget per movie from 1984 - 2018.
-<br>Graph 2 - 
-<br>Anlysis 2 -
+###Conclusion
+<br>In this notebook, we explored three topics of focus to help Computing Vision break into the movie industry. These topics related to which type of movie to release, when to release it, and how much should be spent on each movie.
+<br>Our first recommendation is to produce movies that superhero movies; of the Sci-Fi, Action, or Adventure genres; and are part of a larger franchise that fans can follow.
+<br>Our second recommendation is to release the movie in the winter or summer time to optimize profits from "summer blockbusters" and award ceremonies.
+<br>Lastly, our third recommendation is to spend more than 43,000,000 USD in production on a movie, but no more than 200,000,000 USD as trends suggest possible diminishing returns.
 
 ![bye](https://media.giphy.com/media/m9eG1qVjvN56H0MXt8/giphy.gif) 
