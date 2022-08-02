@@ -4,7 +4,7 @@ Enoch - ekwaning
 Krystal - krystalduong
 Augusth - aukoppaldeloitte
 
-![team logo]()Format: ![Alt Text](url) 
+![welcome](https://media.giphy.com/media/l0MYGb1LuZ3n7dRnO/giphy.gif) 
 
 # ***Repo Guide***
 
@@ -41,6 +41,8 @@ allowed the team to propose that the studio look for progressive cost cutting ma
 
 ### Quantitative Variables: gross, production_budget, domestic_gross, domestic_profit, worldwide_gross, worldwide_profit, popularity, production_budgetINT, domestic_grossINT, worldwide_grossINT
 
+
+![recommendation](https://media.giphy.com/media/sdjzyK11BKMRK5fw3q/giphy.gif)
 
 # ***Recommendation 1*** Release content during summer (May - July) and winter (November - December) holidays. 
 
@@ -157,4 +159,4 @@ Step 2 - Ploted barplot of x-axis Studio & y-axis Total Worldwide Gross (USD) fo
 Graph 2 - 
 Anlysis 2 -
 
-
+![bye](https://media.giphy.com/media/m9eG1qVjvN56H0MXt8/giphy.gif) 
