@@ -46,9 +46,6 @@ Our client Computing Vision is looking to create a new movie studio. Due to thei
 <br>Step 5 - Imported the tsv file from Rotten Tomatoes with movie_gross info. 
 
 ***Conclusion***
-<br>In this notebook, we explored three topics of focus to help Computing Vision break into the movie industry. These topics related to which type of movie to release, when to release it, and how much should be spent on each movie.
-<br>Our first recommendation is to produce movies that superhero movies; of the Sci-Fi, Action, or Adventure genres; and are part of a larger franchise that fans can follow.
-<br>Our second recommendation is to release the movie in the winter or summer time to optimize profits from "summer blockbusters" and award ceremonies.
-<br>Lastly, our third recommendation is to spend more than 43,000,000 USD in production on a movie, but no more than 200,000,000 USD as trends suggest possible diminishing returns.
+<br>In this notebook, we explored three topics of focus to help Computing Vision break into the movie industry. These topics related to which type of movie to release, when to release it, and how much should be spent on each movie. Our first recommendation is to produce movies that superhero movies; of the Sci-Fi, Action, or Adventure genres; and are part of a larger franchise that fans can follow. Our second recommendation is to release the movie in the winter or summer time to optimize profits from "summer blockbusters" and award ceremonies. Lastly, our third recommendation is to spend more than 43,000,000 USD in production on a movie, but no more than 200,000,000 USD as trends suggest possible diminishing returns.
 
 ![bye](https://media.giphy.com/media/m9eG1qVjvN56H0MXt8/giphy.gif) 
