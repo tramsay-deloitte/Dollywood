@@ -22,7 +22,7 @@ statsmodel.api 0.12.0
 
 ***Repo Contents:***
 <br> A Individual Notebooks folder with data explorationa and visualization techniques done by the team.
-<br> A Reccomendation Notebooks folder with specific data exploration and visualization techniques for each recommendation.
+<br> A Recommendation Notebooks folder with specific data exploration and visualization techniques for each recommendation.
 <br> .gitignore file that contains certain ignore instructions in terms of certain data sources and repositories.
 <br> A Capstone Final.pdf folder that has the teams final presentation in pdf format.
 <br> A final notebook that has all of the data exploration and visualization that pertains to the final deliverables for this project.
